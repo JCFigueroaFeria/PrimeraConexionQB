@@ -53,6 +53,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="VentanaInvoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VentanaPagarFacturas.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -60,6 +64,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VentanaInvoice.xaml.cs">
+      <DependentUpon>VentanaInvoice.xaml</DependentUpon>
     </Compile>
     <Compile Include="VentanaPagarFacturas.xaml.cs">
       <DependentUpon>VentanaPagarFacturas.xaml</DependentUpon>

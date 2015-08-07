@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControllerPagarFacturas.cs" />
+    <Compile Include="ControllerPayInvoice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
