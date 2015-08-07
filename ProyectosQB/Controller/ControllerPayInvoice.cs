@@ -8,6 +8,16 @@ namespace Controller
 {
     public class ControllerPayInvoice
     {
-        public ControllerPayInvoice() { }
+        private DAInvoice daInvoice;
+        public ControllerPayInvoice()
+        {
+
+            daInvoice = new DAInvoice();
+        }
+
+        public List<Invoice> cargarPagosInvoice(DateTime fechaInicio, DateTime fechaTermino)
+        {
+            return daInvoice.getListInvoiceDate(fechaInicio, fechaTermino);
+        }
     }
 }
