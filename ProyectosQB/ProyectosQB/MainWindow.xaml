@@ -1,8 +1,20 @@
 ﻿<Window x:Class="ProyectosQB.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="600">
+        Title="Ventana Pagar Facturas" Height="350" Width="600">
     <Grid>
-        
+        <Grid>
+
+            <DataGrid AutoGenerateColumns="False" Name="dgBillPayments">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Numero de Referencia" Binding="{Binding Path=RefNumber}" FontFamily="Arial" FontSize="14" />
+                    <DataGridTextColumn Header="Memo" FontFamily="Arial" FontSize="14" Binding="{Binding Path=Memo}"  />
+                </DataGrid.Columns>
+            </DataGrid>
+            <DatePicker Name="dpFechaInicio" VerticalAlignment="Bottom" HorizontalAlignment="Left"></DatePicker>
+            <DatePicker Name="dpFechaTermino" VerticalAlignment="Bottom" HorizontalAlignment="Right"></DatePicker>
+            <Button Name="btnCargar" Click="btnCargar_Click" VerticalAlignment="Bottom" HorizontalAlignment="Center">Cargar</Button>
+        </Grid>
+
     </Grid>
 </Window>
