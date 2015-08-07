@@ -14,7 +14,7 @@ namespace DataAccess
         private IMsgSetRequest request;
         private QBSessionManager sessionManager;
         private IBillPaymentCheckQuery paymentQuery;
-        private IReceivePaymentQuery
+       
         public DABillPayments()
         {
             session = new SessionQB();
