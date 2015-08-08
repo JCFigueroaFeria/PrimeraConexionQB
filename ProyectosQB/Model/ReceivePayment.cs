@@ -15,17 +15,19 @@ namespace Model
         private string deposit;
         private double amount;
         private string memo;
+        private DateTime date;
         public ReceivePayment()
         {
             refNumber = "";
             deposit = "";
             amount = 0d;
-            memo = "";  
+            memo = "";
+            
         }
-        public string  RefNumber { get; set; }
-        public string Deposit { get; set; }
-        public double Amount { get; set; }
-        public string Memo { get; set; }
-        public string date { get; set; }
+        public string RefNumber { get {return refNumber ;} set {refNumber=value ;} }
+        public string Deposit { get { return deposit; } set { deposit = value; } }
+        public double Amount { get { return amount; } set { amount = value; } }
+        public string Memo { get { return memo; } set { memo = value; } }
+        public DateTime Date { get { return date; } set { date = value; } }
     }
 }
