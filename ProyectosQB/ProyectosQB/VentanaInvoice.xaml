@@ -13,6 +13,6 @@
         </DataGrid>
         <DatePicker Name="dpFechaInicio" VerticalAlignment="Bottom" HorizontalAlignment="Left"></DatePicker>
         <DatePicker Name="dpFechaTermino" VerticalAlignment="Bottom" HorizontalAlignment="Right"></DatePicker>
-        <Button Name="btnCargar" Click="btnCargar_Click" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="228,0,212,0" Width="52">Cargar</Button>
+        <Button Name="btnCargar"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="228,0,212,0" Width="52">Cargar</Button>
     </Grid>
 </Window>
