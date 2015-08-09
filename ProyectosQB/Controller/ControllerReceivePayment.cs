@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccess;
+using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,15 @@ namespace Controller
 {
     public class ControllerReceivePayment
     {
-        public ControllerReceivePayment() { }
+
+        private DAReceivePayment daReceive;
+        public ControllerReceivePayment() {
+            daReceive = new DAReceivePayment();
+        }
+
+        public List<ReceivePayment> cargarReceivePayment(DateTime fechaInicio, DateTime fechaTermino)
+        {
+            return daReceive.getListReceivePayment(fechaInicio, fechaTermino);
+        }
     }
 }
