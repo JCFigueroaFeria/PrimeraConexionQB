@@ -16,6 +16,7 @@ namespace DataAccess
         private IBillPaymentCheckQuery paymentQuery;
        
         public DABillPayments()
+
         {
             session = new SessionQB();
             paymentQuery = null;
