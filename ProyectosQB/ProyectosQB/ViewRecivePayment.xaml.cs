@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using Controller;
+using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,18 @@ namespace ProyectosQB
         public ViewRecivePayment()
         {
             InitializeComponent();
+            dpFechaInicio.SelectedDate = dpFechaTermino.SelectedDate = DateTime.Now;
+        }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            cargarDatosDePagos();
+        }
+
+        private void cargarDatosDePagos()
+        {
+            ControllerReceivePayment cargarReceive = new ControllerReceivePayment();
+            this.tblReceive.ItemsSource = cargarReceive.cargarReceivePayment((DateTime)dpFechaInicio.SelectedDate, (DateTime)dpFechaTermino.SelectedDate);
         }
     }
 }
