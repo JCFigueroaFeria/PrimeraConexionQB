@@ -20,5 +20,8 @@ namespace Controller
         {
             return daReceive.getListReceivePayment(fechaInicio, fechaTermino);
         }
+       
+
+        
     }
 }
