@@ -30,7 +30,7 @@ namespace DataAccess
             return completeList;
         }
 
-        public List<ReceivePayment> getList(DateTime fechaInicio, DateTime fechaTermino)
+        public List<ReceivePayment> getListReceivePayment(DateTime fechaInicio, DateTime fechaTermino)
         {
             List<ReceivePayment> completeList = new List<ReceivePayment>();
             prepareQuery();
