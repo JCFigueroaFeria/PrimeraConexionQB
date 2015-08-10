@@ -19,5 +19,11 @@ namespace Controller
         {
             return daBills.getListBillDate(fechaInicio, fechaTermino);
         }
+
+        public Bill cargarBillReferent(string numReferent)
+        {
+            return daBills.getElement(numReferent);
+        }
+
     }
 }
