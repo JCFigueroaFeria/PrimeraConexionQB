@@ -24,22 +24,26 @@
                 <DataGridTextColumn Header="RefNumber" Width="4*" Binding="{Binding Path=RefNumber}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Amount $"  Width="4*" Binding="{Binding Path=Amount}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Amount Discount" Width="4*" Binding="{Binding Path=Discount}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Invoice" Width="4*" Binding="{Binding Path=Facturados}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1">
             <DatePicker Name="dpFechaInicio" HorizontalAlignment="Left" Margin="5" Padding="3"></DatePicker>
             <DatePicker Name="dpFechaTermino" HorizontalAlignment="Right" Margin="5" Padding="3"></DatePicker>
-
-
-        </StackPanel>
+         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
-            <Button Name="btntableload" Height="30" Width="68" Content="table load" Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Right"  Margin="5" Click="btntableload_Click"/>
+            
             <TextBox Controls:TextBoxHelper.Watermark="Numeber Referent"  VerticalAlignment="Center" Margin="5,7" x:Name="txtRefNumber" Width="168"/>
             <Button x:Name="btnBuscarReferent" Height="30" Width="50" Content="Search2" Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Right"  Margin="5" Click="btnBuscarReferent_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
             <Label VerticalAlignment="Center" Padding="2">EJEMPLO DE QUICKBOOK Bill</Label>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+            <Button x:Name="btntableload" Height="30" Width="68" Content="table load" Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Right"  Margin="5" Click="btntableload_Click"/>
+            <Button x:Name="btnFacturado" Height="30" Width="68" Content="Facturado" Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Right"  Margin="5"  Click="btnFacturado_Click"/>
+            <Button x:Name="btnNoFacturado" Height="30" Width="68" Content="No Facturado" Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Right"  Margin="5" Click="btnNoFacturado_Click"/>
         </StackPanel>
 
     </Grid>

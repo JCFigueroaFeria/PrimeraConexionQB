@@ -103,8 +103,15 @@ namespace DataAccess
             bill.RefNumber = billCheckRet.RefNumber.GetValue();
             bill.Date = billCheckRet.TxnDate.GetValue();
             bill.Amount = billCheckRet.AmountDue.GetValue();
+            bill.Facturados = facturadoAzar();
             return bill;
+        }
 
+        private bool facturadoAzar()
+        {
+            Random rnd = new Random();
+            int number = rnd.Next(0, 100);
+            return ((number > 50) ? true : false);
         }
     }
 }

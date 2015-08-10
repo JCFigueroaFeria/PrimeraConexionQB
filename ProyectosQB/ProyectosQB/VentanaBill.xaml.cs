@@ -1,5 +1,6 @@
 ﻿using Business;
 using Controller;
+using DataAccess;
 using MahApps.Metro.Controls;
 using Model;
 using System;
@@ -25,6 +26,7 @@ namespace ProyectosQB
     {
         ControllerBill cargarBill;
         Discount discount;
+        List<Bill> ultimaLista;
         public VentanaBill()
         {
             InitializeComponent();
@@ -48,6 +50,7 @@ namespace ProyectosQB
 
             List<Bill> bills = cargarBill.cargarDatosBill((DateTime)dpFechaInicio.SelectedDate, (DateTime)dpFechaTermino.SelectedDate);
             aplicarDescuento(bills);
+            ultimaLista = bills;
         }
 
 
@@ -57,6 +60,7 @@ namespace ProyectosQB
             Bill rBill = cargarBill.cargarBillReferent(txtRefNumber.Text);
             listBill.Add(rBill);
             aplicarDescuento(listBill);
+            ultimaLista = listBill;
         }
         private void aplicarDescuento(List<Bill> bills)
         {
@@ -65,6 +69,35 @@ namespace ProyectosQB
                 discount.aplicarDecuento(bill);
             }
             this.tblReceive.ItemsSource = bills;
+        }
+
+        private void btnFacturado_Click(object sender, RoutedEventArgs e)
+        {
+            List<Bill> tem = new List<Bill>();
+            for (int i = 0; i < ultimaLista.Count; i++)
+            {
+                if (ultimaLista[i].Facturados==true)
+                {
+                    tem.Add(ultimaLista[i]);
+                }
+            }
+            this.tblReceive.ItemsSource = tem;
+            
+        }
+
+        private void btnNoFacturado_Click(object sender, RoutedEventArgs e)
+        {
+
+            List<Bill> tem = new List<Bill>();
+            for (int i = 0; i < ultimaLista.Count; i++)
+            {
+                if (ultimaLista[i].Facturados == false)
+                {
+                    tem.Add(ultimaLista[i]);
+                }
+            }
+            this.tblReceive.ItemsSource = tem;
+
         }
     }
 }

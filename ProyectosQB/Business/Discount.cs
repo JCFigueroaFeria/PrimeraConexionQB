@@ -19,7 +19,7 @@ namespace Business
         }
         public void aplicarDecuento(Bill billDiscount)
         {
-            billDiscount.Amount = (float)(billDiscount.Amount * descuento);
+            billDiscount.Discount = (float)(billDiscount.Amount * descuento);
         }
     }
 }

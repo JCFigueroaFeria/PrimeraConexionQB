@@ -11,7 +11,8 @@ namespace Controller
     public class ControllerBill
     {
         private DABill daBills;
-        public ControllerBill() {
+        public ControllerBill()
+        {
             daBills = new DABill();
         }
 
@@ -25,5 +26,7 @@ namespace Controller
             return daBills.getElement(numReferent);
         }
 
+
     }
 }
+
