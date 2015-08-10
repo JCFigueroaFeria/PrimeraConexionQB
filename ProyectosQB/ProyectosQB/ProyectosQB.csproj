@@ -59,9 +59,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="VentanaBill.xaml.cs">
+      <DependentUpon>VentanaBill.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewRecivePayment.xaml.cs">
       <DependentUpon>ViewRecivePayment.xaml</DependentUpon>
     </Compile>
+    <Page Include="VentanaBill.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VentanaInvoice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,6 +122,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{bb689a64-3740-4c94-8e4c-12ce3b8dc268}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Controller\Controller.csproj">
       <Project>{0d4f7916-ee4c-462a-b80c-25736bddf760}</Project>
       <Name>Controller</Name>
