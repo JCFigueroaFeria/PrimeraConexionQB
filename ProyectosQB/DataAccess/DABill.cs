@@ -31,7 +31,7 @@ namespace DataAccess
             readData(completeList, respuesta);
             return completeList;
         }
-        public List<Bill> getList(DateTime fechaInicio, DateTime fechaTermino)
+        public List<Bill> getListBillDate(DateTime fechaInicio, DateTime fechaTermino)
         {
             List<Bill> completeList = new List<Bill>();
             prepareQuery();
