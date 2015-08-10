@@ -16,11 +16,14 @@ namespace Controller
             daReceive = new DAReceivePayment();
         }
 
-        public List<ReceivePayment> cargarReceivePayment(DateTime fechaInicio, DateTime fechaTermino)
+        public List<ReceivePayment> cargarReceivePayments(DateTime fechaInicio, DateTime fechaTermino)
         {
             return daReceive.getListReceivePayment(fechaInicio, fechaTermino);
         }
-       
+
+        public ReceivePayment cardarReceivePayment(string numReferent) {
+            return daReceive.getElement(numReferent);
+        }
 
         
     }
