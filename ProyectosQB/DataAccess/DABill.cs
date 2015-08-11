@@ -54,6 +54,8 @@ namespace DataAccess
             return null;
         }
 
+      
+
         private void setFilter(string refNumber)
         {
             billQuery.ORBillQuery.BillFilter.ORRefNumberFilter.RefNumberFilter.MatchCriterion.SetValue(ENMatchCriterion.mcContains);
@@ -66,6 +68,7 @@ namespace DataAccess
         }
 
 
+        
 
         private void prepareQuery()
         {

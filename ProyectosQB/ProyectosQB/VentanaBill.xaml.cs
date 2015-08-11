@@ -27,6 +27,7 @@ namespace ProyectosQB
         ControllerBill cargarBill;
         Discount discount;
         List<Bill> ultimaLista;
+       
         public VentanaBill()
         {
             InitializeComponent();
@@ -42,7 +43,9 @@ namespace ProyectosQB
 
         private void btnBuscarReferent_Click(object sender, RoutedEventArgs e)
         {
-            cargarTablaPorReferencia();
+            //cargarTablaPorReferencia();
+            busquedaPorNombre();
+            
         }
 
         public void cargarTablaPorFechas()
@@ -98,6 +101,23 @@ namespace ProyectosQB
             }
             this.tblReceive.ItemsSource = tem;
 
+        }
+
+
+        public void busquedaPorNombre() {
+
+            List<Bill> billName = new List<Bill>();
+            for (int i = 0; i < ultimaLista.Count; i++)
+            {
+
+                if (ultimaLista[i].Vendor.Equals(txtRefNumber.Text))
+                {
+                    billName.Add(ultimaLista[i]);
+                }
+                this.tblReceive.ItemsSource = billName;
+            }
+
+        
         }
     }
 }
