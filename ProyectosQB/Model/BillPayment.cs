@@ -10,10 +10,14 @@ namespace Model
     {
         private string refNumber;
         private string memo;
+        private DateTime date;
+        private double endingBalance;
+        private string bank;
         public BillPayment()
         {
             refNumber = "";
             memo = "";
+            endingBalance = 0d;
         }
 
         public string RefNumber
@@ -26,5 +30,24 @@ namespace Model
             get { return memo; }
             set { memo = value; }
         }
+
+        public DateTime Date
+        {
+            get { return date; }
+            set { date = value; }
+        }
+
+        public double Balace
+        {
+            get { return endingBalance; }
+            set { endingBalance = value; }
+        }
+
+        public string  Bank
+        {
+            get { return bank; }
+            set { bank = value; }
+        }
+
     }
 }

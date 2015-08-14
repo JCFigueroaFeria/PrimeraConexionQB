@@ -43,8 +43,7 @@ namespace ProyectosQB
 
         private void btnBuscarReferent_Click(object sender, RoutedEventArgs e)
         {
-            //cargarTablaPorReferencia();
-            busquedaPorNombre();
+            cargarTablaPorReferencia();
             
         }
 
@@ -73,36 +72,6 @@ namespace ProyectosQB
             }
             this.tblReceive.ItemsSource = bills;
         }
-
-        private void btnFacturado_Click(object sender, RoutedEventArgs e)
-        {
-            List<Bill> tem = new List<Bill>();
-            for (int i = 0; i < ultimaLista.Count; i++)
-            {
-                if (ultimaLista[i].Facturados==true)
-                {
-                    tem.Add(ultimaLista[i]);
-                }
-            }
-            this.tblReceive.ItemsSource = tem;
-            
-        }
-
-        private void btnNoFacturado_Click(object sender, RoutedEventArgs e)
-        {
-
-            List<Bill> tem = new List<Bill>();
-            for (int i = 0; i < ultimaLista.Count; i++)
-            {
-                if (ultimaLista[i].Facturados == false)
-                {
-                    tem.Add(ultimaLista[i]);
-                }
-            }
-            this.tblReceive.ItemsSource = tem;
-
-        }
-
 
         public void busquedaPorNombre() {
 

@@ -100,10 +100,11 @@ namespace DataAccess
         private Invoice readInvoice(IInvoiceRet invoiceLineRet)
         {
             Invoice INvoice = new Invoice();
+            INvoice.RefNumber = invoiceLineRet.RefNumber.GetValue();
+            INvoice.Date = invoiceLineRet.TxnDate.GetValue(); ;
             INvoice.Tax = invoiceLineRet.SalesTaxTotal.GetValue();
-            INvoice.NumInvoice = invoiceLineRet.RefNumber.GetValue();
-            //  INvoice.Address = invoiceLineRet.ShipAddress.City.GetValue();
-            INvoice.Memo = invoiceLineRet.Memo.GetValue();
+            
+          
             return INvoice;
         }
     }

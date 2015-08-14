@@ -10,15 +10,19 @@ namespace Model
     {
         /*Nota: Attibutos de la clase invoice y la interfaz invoice*/
         private double tax;
-        private string numInvoice;
+        private string refnumber;
         private string address;
         private string memo;
+        private DateTime date;
+        private string deposit;
+       
         public Invoice()
         {
             tax = 0f;
-            numInvoice = "";
+            refnumber = "";
             address = "";
             memo = "";
+          
         }
 
         public double Tax
@@ -27,10 +31,10 @@ namespace Model
             set { tax = value; }
         }
 
-        public string NumInvoice
+        public string RefNumber
         {
-            get { return numInvoice; }
-            set { numInvoice = value; }
+            get { return refnumber; }
+            set { refnumber = value; }
         }
 
         public string Address
@@ -44,5 +48,18 @@ namespace Model
             get { return memo; }
             set { memo = value; }
         }
+
+        public DateTime Date
+        {
+            get { return date; }
+            set { date = value; }
+        }
+        public string Deposit
+        {
+            get { return deposit; }
+            set { deposit = value; }
+
+        }
+       
     }
 }
