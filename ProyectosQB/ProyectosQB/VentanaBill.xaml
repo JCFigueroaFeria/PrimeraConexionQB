@@ -33,13 +33,14 @@
         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
 
             <TextBox Controls:TextBoxHelper.Watermark="Numeber Referent"  VerticalAlignment="Center" Margin="5,7" x:Name="txtRefNumber" Width="168"/>
-            <Button x:Name="btnBuscarReferent" Height="30" Width="50" Content="Search2" Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Right"  Margin="5" Click="btnBuscarReferent_Click"/>
+            <Button x:Name="btnBuscarReferent" Height="30" Width="50" Content="Search2"  HorizontalAlignment="Right"  Margin="5" Click="btnBuscarReferent_Click"/>
+            <Button x:Name="btnExportar" Height="30" Width="50" Content="export"  HorizontalAlignment="Right"  Margin="5" Click="btnExportar_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
             <Label VerticalAlignment="Center" Padding="2">EJEMPLO DE QUICKBOOK Bill</Label>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
-            <Button x:Name="btntableload" Height="30" Width="68" Content="table load" Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Right"  Margin="5" Click="btntableload_Click"/>
+            <Button x:Name="btntableload" Height="30" Width="68" Content="table load" HorizontalAlignment="Right"  Margin="5" Click="btntableload_Click"/>
            
         </StackPanel>
         <Label Content="Bill"   Padding="2" FontSize="22" Foreground="Green"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="166"/>

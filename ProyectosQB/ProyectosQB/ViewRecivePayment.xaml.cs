@@ -17,23 +17,13 @@ using System.Windows.Shapes;
 
 namespace ProyectosQB
 {
-    /// <summary>
-    /// Lógica de interacción para ViewRecivePayment.xaml
-    /// </summary>
-    public partial class ViewRecivePayment : MetroWindow
-
+     public partial class ViewRecivePayment : MetroWindow
     {
         public ViewRecivePayment()
         {
             InitializeComponent();
             dpFechaInicio.SelectedDate = dpFechaTermino.SelectedDate = DateTime.Now;
         }
-
-        private void btnBuscar_Click(object sender, RoutedEventArgs e)
-        {
-            cargarDatosDePagos();
-        }
-
         private void cargarDatosDePagos()
         {
             ControllerReceivePayment cargarReceive = new ControllerReceivePayment();
@@ -49,6 +39,11 @@ namespace ProyectosQB
             List<ReceivePayment> lista = new List<ReceivePayment>();
             lista.Add(rPayment);
             this.tblReceive.ItemsSource = lista;
+        }
+
+        private void btnCargarTabla_Click(object sender, RoutedEventArgs e)
+        {
+            cargarDatosDePagos();
         }
     }
 }

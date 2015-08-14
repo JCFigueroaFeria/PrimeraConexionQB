@@ -21,7 +21,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Date"         Width="4*" Binding="{Binding Path=Date}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Num-Referent" Width="4*"  Binding="{Binding Path=RefNumber}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Receive From"      Width="4*" Binding="{Binding Path=ReceiveFrom}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Receive From"      Width="4*" Binding="{Binding Path=Customer}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Amount $"     Width="4*" Binding="{Binding Path=Amount}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>

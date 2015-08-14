@@ -46,8 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControllerBill.cs" />
-    <Compile Include="ControllerPagarFacturas.cs" />
-    <Compile Include="ControllerPayInvoice.cs" />
     <Compile Include="ControllerReceivePayment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

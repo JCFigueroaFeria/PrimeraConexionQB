@@ -66,8 +66,6 @@ namespace DataAccess
         }
 
 
-
-
         private void prepareQuery()
         {
             session.open();
@@ -97,14 +95,12 @@ namespace DataAccess
         }
 
         private ReceivePayment readReceivePayment( IReceivePaymentRet receiveCheckRet)
-            
-        { /*Nota: Se determina las opciones que se mostraran en el datagrid*/
+        { 
             ReceivePayment receivePayment = new ReceivePayment();
-            receivePayment.RefNumber = receiveCheckRet.RefNumber.GetValue();
-            receivePayment.Deposit = receiveCheckRet.DepositToAccountRef.FullName.GetValue();
-            receivePayment.Amount = receiveCheckRet.TotalAmount.GetValue();
-            receivePayment.Memo = receiveCheckRet.Memo.GetValue();
             receivePayment.Date = receiveCheckRet.TxnDate.GetValue();
+            receivePayment.RefNumber = receiveCheckRet.RefNumber.GetValue();
+            receivePayment.Amount = receiveCheckRet.TotalAmount.GetValue();
+            receivePayment.Customer = receiveCheckRet.CustomerRef.FullName.GetValue();
             return receivePayment;
         }
 

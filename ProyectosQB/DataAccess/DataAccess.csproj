@@ -46,8 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DABill.cs" />
-    <Compile Include="DABillPayments.cs" />
-    <Compile Include="DAInvoice.cs" />
     <Compile Include="DAReceivePayment.cs" />
     <Compile Include="SessionQB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
