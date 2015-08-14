@@ -26,7 +26,7 @@ namespace ProyectosQB
     {
         ControllerBill cargarBill;
         List<Bill> ultimaLista;
-       
+
         public VentanaBill()
         {
             InitializeComponent();
@@ -42,14 +42,14 @@ namespace ProyectosQB
         private void btnBuscarReferent_Click(object sender, RoutedEventArgs e)
         {
             cargarTablaPorReferencia();
-            
+
         }
 
         public void cargarTablaPorFechas()
         {
 
             List<Bill> bills = cargarBill.cargarDatosBill((DateTime)dpFechaInicio.SelectedDate, (DateTime)dpFechaTermino.SelectedDate);
-            aplicarDescuento(bills);
+            this.tblReceive.ItemsSource = ultimaLista;
             ultimaLista = bills;
         }
 
@@ -57,20 +57,13 @@ namespace ProyectosQB
         public void cargarTablaPorReferencia()
         {
             List<Bill> listBill = new List<Bill>();
-            Bill rBill = cargarBill.cargarBillReferent(txtRefNumber.Text);
+            Bill rBill = cargarBill.cargarBillReferent(this.txtRefNumber.Text);
             listBill.Add(rBill);
+            tblReceive.ItemsSource = ultimaLista;
             ultimaLista = listBill;
         }
-       /* private void aplicarDescuento(List<Bill> bills)
+        public void busquedaPorNombre()
         {
-            foreach (var bill in bills)
-            {
-                discount.aplicarDecuento(bill);
-            }
-            this.tblReceive.ItemsSource = bills;
-        }*/
-
-        public void busquedaPorNombre() {
 
             List<Bill> billName = new List<Bill>();
             for (int i = 0; i < ultimaLista.Count; i++)
@@ -83,19 +76,18 @@ namespace ProyectosQB
                 this.tblReceive.ItemsSource = billName;
             }
 
-        
+
         }
 
         private void btnExportar_Click(object sender, RoutedEventArgs e)
         {
-           
 
+            exportarDatosExcel();
         }
 
 
         public void exportarDatosExcel()
         {
-            //Instancia del libreria offcice
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
@@ -104,23 +96,13 @@ namespace ProyectosQB
             worksheet = workbook.ActiveSheet;
             worksheet.Name = "Exportar Contenido de la tabla";
 
-            // Agregando color a una celda
-            Microsoft.Office.Interop.Excel.Range cambios = worksheet.get_Range("A1:B1");
-            cambios.EntireRow.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);
-            cambios.EntireRow.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightSkyBlue);
-            cambios.EntireRow.Font.Size = 14;
-            cambios.EntireRow.AutoFit();
-
             //Se le manda a la cabezera los datos de las tabla
             worksheet.Cells[1, 1] = "Vendor";
-            worksheet.Cells[1, 2] = "DAte";
+            worksheet.Cells[1, 2] = "Date";
             worksheet.Cells[1, 3] = "Ref-Number";
             worksheet.Cells[1, 4] = "Amount";
 
-
-
-
-            // Almacenar cada valor de la fila y la columna de sobresalir hoja
+            
             for (int i = 0; i < tblReceive.Items.Count; i++)
             {
 
@@ -131,10 +113,6 @@ namespace ProyectosQB
                 worksheet.Cells[i + 3, 4] = bills.Amount;
 
             }
-
-
-            // Guardar la aplicación
-            //workbook.SaveAs("@C:/Users/JulioCesar/OneDrive/Documentos/output2.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
 
 
         }

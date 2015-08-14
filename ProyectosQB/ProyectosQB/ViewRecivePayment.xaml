@@ -38,6 +38,7 @@
             
             <TextBox Controls:TextBoxHelper.Watermark="Numeber Referent"  VerticalAlignment="Center" Margin="5,7" x:Name="txtRefNumber" Width="168"/>
             <Button x:Name="btnBuscar2" Height="30" Width="50" Content="Search"  HorizontalAlignment="Right"  Margin="5" Click="tnBuscar2_Click"/>
+            <Button x:Name="btnExport" Height="30" Width="50" Content="Excel"  HorizontalAlignment="Right"  Margin="5" Click="btnExport_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
             <Label VerticalAlignment="Center" Padding="2">EJEMPLO DE QUICKBOOK Receive Payment</Label>
